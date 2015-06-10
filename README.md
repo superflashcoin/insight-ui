@@ -1,12 +1,12 @@
-# *insight*
+# *Safe.Cash Blockchain Interface*
 
-*insight* is an open-source bitcoin blockchain explorer with complete REST
-and websocket APIs. Insight runs in NodeJS, uses AngularJS for the
+*Safe.Cash Blockchain* is an open-source safe.cash blockchain explorer with complete REST
+and websocket APIs. Safe.Cash Blockchain runs in NodeJS, uses AngularJS for the
 front-end and LevelDB for storage.
 
-Check some screenshots and more details at [insight's project homepage](http://insight.is/).
+Check some screenshots and more details at.
 
-*Insight* project is now split into two repositories. One for the [API](https://github.com/bitpay/insight-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
+*Safe.Cash Blockchain* project is now split into two repositories. One for the [API](https://git.unseen.is/capitalbits/blockchain-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
 
 ## Prerequisites
 
@@ -17,9 +17,9 @@ Check some screenshots and more details at [insight's project homepage](http://i
 ## Quick Install
   Check the Prerequisites section above before installing.
 
-  To install Insight, clone the main repository:
+  To install Safe.Cash Blockchain, clone the main repository:
 
-    $ git clone https://github.com/bitpay/insight.git && cd insight
+    $ git clone https://github.com/bitpay/Safe.Cash Blockchain.git && cd Safe.Cash Blockchain
 
   Install dependencies:
 
@@ -33,8 +33,8 @@ Check some screenshots and more details at [insight's project homepage](http://i
 
     http://localhost:3001
 
-  If *insight* reports problems connecting to **bitcoind** please check the CONFIGURATION section of 
-  [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). To set the 
+  If *Safe.Cash Blockchain* reports problems connecting to **bitcoind** please check the CONFIGURATION section of 
+  [Safe.Cash Blockchain-api README](https://git.unseen.is/capitalbits/blockchain-api/blob/master/README.md). To set the 
   environment variables run something like:
   
      $ INSIGHT_NETWORK=livenet BITCOIND_USER=user BITCOIND_PASS=pass INSIGHT_PUBLIC_PATH=public  npm start
@@ -43,17 +43,17 @@ Check some screenshots and more details at [insight's project homepage](http://i
   Please note that the app will need to sync its internal database
   with the blockchain state, which may take some time. You can check
   sync progress from within the web interface. More details about that process
-  on [insight-api README](https://github.com/bitpay/insight-api/blob/master/README.md). 
+  on [Safe.Cash Blockchain-api README](https://git.unseen.is/capitalbits/blockchain-api/blob/master/README.md). 
   
   
 ## Nginx Setup
 
-To use Nginx as a reverse proxy for Insight, use the following base [configuration](https://gist.github.com/matiu/bdd5e55ff0ad90b54261)
+To use Nginx as a reverse proxy for Safe.Cash Blockchain, use the following base [configuration](https://gist.github.com/matiu/bdd5e55ff0ad90b54261)
 
 
 ## Development
 
-To run insight locally for development mode:
+To run Safe.Cash Blockchain locally for development mode:
 
 Install bower dependencies:
 
@@ -74,12 +74,12 @@ $ grunt
 ```
 
 
-In case you are developing *insight* and *insight-api* toghether, you can do the following:
+In case you are developing *Safe.Cash Blockchain* and *Safe.Cash Blockchain-api* toghether, you can do the following:
 
-* Install insight and insight-api on the same path ($IROOT)
+* Install Safe.Cash Blockchain and Safe.Cash Blockchain-api on the same path ($IROOT)
 
 ```
-  $ cd $IROOT/insight
+  $ cd $IROOT/INSIGHT
   $ grunt
 ```
 
@@ -96,14 +96,14 @@ in other terminal:
 INSIGHT_PUBLIC_PATH=insight/public  grunt
 ```
 
-at insight-api's home path (edit the path according your setup).
+at Safe.Cash Blockchain-api's home path (edit the path according your setup).
 
-**also** in the insight-api path. (So you will have to grunt process running, one for insight and one for insight-api).
+**also** in the Safe.Cash Blockchain-api path. (So you will have to grunt process running, one for Safe.Cash Blockchain and one for Safe.Cash Blockchain-api).
 
 
 ## Multilanguage support
 
-insight use [angular-gettext](http://angular-gettext.rocketeer.be) for
+Safe.Cash Blockchain use [angular-gettext](http://angular-gettext.rocketeer.be) for
 multilanguage support. 
 
 To enable a text to be translated, add the ***translate*** directive to html tags. See more details [here](http://angular-gettext.rocketeer.be/dev-guide/annotate/). Then, run:
@@ -130,11 +130,11 @@ compile***.
 
 ## Note
 
-For more details about the *insight API* configs and end-point, just go to [insight API github repository](https://github.com/bitpay/insight-api) or read the [documentation](https://github.com/bitpay/insight-api/blob/master/README.md)
+For more details about the *Safe.Cash Blockchain API* configs and end-point, just go to [Safe.Cash Blockchain API github repository](https://git.unseen.is/capitalbits/blockchain-api/) or read the [documentation](https://git.unseen.is/capitalbits/blockchain-api//blob/master/README.md)
 
 ## Contribute
 
-Contributions and suggestions are welcomed at [insight github repository](https://github.com/bitpay/insight).
+Contributions and suggestions are welcomed at [Safe.Cash Blockchain github repository](https://git.unseen.is/capitalbits/blockchain-ui/).
 
 
 ## License
