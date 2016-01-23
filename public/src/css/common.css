@@ -115,7 +115,7 @@ margin-left: 0;
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: #373D42;}
 
 .navbar-default {
-  background-color: #8DC429;
+  background-color: #1363C2;
   margin: 0;
   border: 0;
 }
@@ -166,7 +166,7 @@ margin-left: 0;
 }
 
 .navbar-form .form-control {
-  background-color: #7CAD23;
+  background-color: #2985F2;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -184,7 +184,7 @@ margin-left: 0;
 #search-form { color: #fff; }
 
 #search.loading {
-  background-image: url('/img/loading.gif');
+  background-image: url('../img/loading.gif');
   background-position: 5px center;
   background-repeat: no-repeat;
   padding-left: 25px;
@@ -216,7 +216,7 @@ margin-left: 0;
 .status {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background-color: #597338;
+  background-color: #2985F2;
   border-radius: 3px;
   margin: 15px 0;
   padding: 8px 10px;
@@ -548,7 +548,7 @@ margin-left: 0;
 }
 
 .btn-copy {
-  background: transparent url('/img/icons/copy.png') center center no-repeat;
+  background: transparent url('../img/icons/copy.png') center center no-repeat;
 }
 
 .btn-copy .tooltip {
@@ -614,22 +614,22 @@ margin-left: 0;
   height: 45px;
 }
 #powered a.bitcore {
-  background-image: url('/img/logo.svg');
+  background-image: url('../img/logo.svg');
   background-size: 80px;
   width: 30%;
 }
 #powered a.nodejs {
-  background-image: url('/img/nodejs.png');
+  background-image: url('../img/nodejs.png');
   background-size: 80px;
   width: 30%;
 }
 #powered a.angularjs {
-  background-image: url('/img/angularjs.png');
+  background-image: url('../img/angularjs.png');
   background-size: 50px;
   width: 20%;
 }
 #powered a.leveldb {
-  background-image: url('/img/leveldb.png');
+  background-image: url('../img/leveldb.png');
   background-size: 50px;
   width: 20%;
 }

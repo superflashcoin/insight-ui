@@ -1,12 +1,11 @@
 {
-  "name": "insight-bitcore",
+  "name": "insight-ui",
   "description": "An open-source frontend for the Insight API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
-  "version": "0.2.5",
-  "author": {
-    "name": "Ryan X Charles",
-    "email": "ryan@bitpay.com"
+  "version": "0.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bitpay/insight.git"
   },
-  "repository": "git://github.com/bitpay/insight.git",
   "contributors": [
     {
       "name": "Matias Alejo Garcia",
@@ -42,12 +41,8 @@
     "bitcore",
     "front-end"
   ],
-  "scripts": {
-    "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/insight-bitcore-api"
-  },
-  "dependencies": {
-    "insight-bitcore-api": ">0.2.10"
-  },
+  "bitcoreNode": "bitcore-node",
+  "dependencies": {},
   "devDependencies": {
     "bower": "~1.2.8",
     "grunt": "~0.4.2",
@@ -60,5 +55,28 @@
     "grunt-css": "~0.5.4",
     "grunt-markdown": "~0.5.0",
     "grunt-angular-gettext": "^0.2.15"
-  }
+  },
+  "gitHead": "7c5a79c80a6e5e3f8d33dc84e6ccb61072029d94",
+  "_id": "insight-ui@0.3.0",
+  "scripts": {},
+  "_shasum": "8f4976d44548917a73f7bec30fb038cb76f5f757",
+  "_from": "insight-ui@>=0.3.0 <0.4.0",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "braydonf",
+    "email": "braydon@bitpay.com"
+  },
+  "maintainers": [
+    {
+      "name": "braydonf",
+      "email": "braydon@bitpay.com"
+    }
+  ],
+  "dist": {
+    "shasum": "8f4976d44548917a73f7bec30fb038cb76f5f757",
+    "tarball": "http://registry.npmjs.org/insight-ui/-/insight-ui-0.3.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/insight-ui/-/insight-ui-0.3.0.tgz"
 }

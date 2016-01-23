@@ -1,59 +1,23 @@
-# *Safe.Cash Blockchain Interface*
+# Insight UI
 
-*Safe.Cash Blockchain* is an open-source safe.cash blockchain explorer with complete REST
-and websocket APIs. Safe.Cash Blockchain runs in NodeJS, uses AngularJS for the
-front-end and LevelDB for storage.
+A Bitcoin blockchain explorer web application service for [Bitcore Node](https://github.com/bitpay/bitcore-node) using the [Insight API](https://github.com/bitpay/insight-api).
 
-Check some screenshots and more details at.
+## Getting Started
 
-*Safe.Cash Blockchain* project is now split into two repositories. One for the [API](https://git.unseen.is/capitalbits/blockchain-api) and for the front-end. This repository is for the front-end, which will install the API as a NPM dependency.
+```bash
+npm install -g bitcore-node
+bitcore-node create mynode
+cd mynode
+bitcore-node add insight-api
+bitcore-node add insight-ui
+bitcore-node start
+```
 
-## Prerequisites
-
-* **Node.js v0.10.x** - Download and Install [Node.js](http://www.nodejs.org/download/).
-
-* **NPM** - Node.js package manager, should be automatically installed when you get node.js.
-
-## Quick Install
-  Check the Prerequisites section above before installing.
-
-  To install Safe.Cash Blockchain, clone the main repository:
-
-    $ git clone https://github.com/bitpay/Safe.Cash Blockchain.git && cd Safe.Cash Blockchain
-
-  Install dependencies:
-
-    $ npm install
-    
-  Run the main application:
-
-    $ npm start
-    
-  Then open a browser and go to:
-
-    http://localhost:3001
-
-  If *Safe.Cash Blockchain* reports problems connecting to **bitcoind** please check the CONFIGURATION section of 
-  [Safe.Cash Blockchain-api README](https://git.unseen.is/capitalbits/blockchain-api/blob/master/README.md). To set the 
-  environment variables run something like:
-  
-     $ INSIGHT_NETWORK=livenet BITCOIND_USER=user BITCOIND_PASS=pass INSIGHT_PUBLIC_PATH=public  npm start
-
-
-  Please note that the app will need to sync its internal database
-  with the blockchain state, which may take some time. You can check
-  sync progress from within the web interface. More details about that process
-  on [Safe.Cash Blockchain-api README](https://git.unseen.is/capitalbits/blockchain-api/blob/master/README.md). 
-  
-  
-## Nginx Setup
-
-To use Nginx as a reverse proxy for Safe.Cash Blockchain, use the following base [configuration](https://gist.github.com/matiu/bdd5e55ff0ad90b54261)
-
+Open a web browser to `http://localhost:3001/insight/`
 
 ## Development
 
-To run Safe.Cash Blockchain locally for development mode:
+To run Insight UI locally in development mode:
 
 Install bower dependencies:
 
@@ -67,44 +31,15 @@ To compile and minify the web application's assets:
 $ grunt compile
 ```
 
-There is a convinent Gruntfile.js for automation during editing the code
+There is a convenient Gruntfile.js for automation during editing the code
 
 ```
 $ grunt
 ```
 
-
-In case you are developing *Safe.Cash Blockchain* and *Safe.Cash Blockchain-api* toghether, you can do the following:
-
-* Install Safe.Cash Blockchain and Safe.Cash Blockchain-api on the same path ($IROOT)
-
-```
-  $ cd $IROOT/INSIGHT
-  $ grunt
-```
-
-in other terminal:
-
-```
-  $ cd $IROOT/insight-api 
-  $ ln -s ../insight/public
-  $ INSIGHT_PUBLIC_PATH=public node insight.js 
-```
-
-
-``` 
-INSIGHT_PUBLIC_PATH=insight/public  grunt
-```
-
-at Safe.Cash Blockchain-api's home path (edit the path according your setup).
-
-**also** in the Safe.Cash Blockchain-api path. (So you will have to grunt process running, one for Safe.Cash Blockchain and one for Safe.Cash Blockchain-api).
-
-
 ## Multilanguage support
 
-Safe.Cash Blockchain use [angular-gettext](http://angular-gettext.rocketeer.be) for
-multilanguage support. 
+Insight UI uses [angular-gettext](http://angular-gettext.rocketeer.be) for multilanguage support.
 
 To enable a text to be translated, add the ***translate*** directive to html tags. See more details [here](http://angular-gettext.rocketeer.be/dev-guide/annotate/). Then, run:
 
@@ -112,12 +47,11 @@ To enable a text to be translated, add the ***translate*** directive to html tag
 grunt compile
 ```
 
-This action will create a template.pot file in ***po/*** folder. You can open
-it with some PO editor ([Poedit](http://poedit.net)). Read this [guide](http://angular-gettext.rocketeer.be/dev-guide/translate/) to learn how to edit/update/import PO files from a generated POT file. PO file will be generated inside po/ folder.
+This action will create a template.pot file in ***po/*** folder. You can open it with some PO editor ([Poedit](http://poedit.net)). Read this [guide](http://angular-gettext.rocketeer.be/dev-guide/translate/) to learn how to edit/update/import PO files from a generated POT file. PO file will be generated inside po/ folder.
 
 If you make new changes, simply run **grunt compile** again to generate a new .pot template and the angular javascript ***js/translations.js***. Then (if use Poedit), open .po file and choose ***update from POT File*** from **Catalog** menu.
 
-Finally changes your default language from ***public/src/js/config*** 
+Finally changes your default language from ***public/src/js/config***
 
 ```
 gettextCatalog.currentLanguage = 'es';
@@ -130,11 +64,11 @@ compile***.
 
 ## Note
 
-For more details about the *Safe.Cash Blockchain API* configs and end-point, just go to [Safe.Cash Blockchain API github repository](https://git.unseen.is/capitalbits/blockchain-api/) or read the [documentation](https://git.unseen.is/capitalbits/blockchain-api//blob/master/README.md)
+For more details about the [Insight API](https://github.com/bitpay/insight-api) configuration and end-points, go to [Insight API GitHub repository](https://github.com/bitpay/insight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at [Safe.Cash Blockchain github repository](https://git.unseen.is/capitalbits/blockchain-ui/).
+Contributions and suggestions are welcomed at the [Insight UI GitHub repository](https://github.com/bitpay/insight).
 
 
 ## License
