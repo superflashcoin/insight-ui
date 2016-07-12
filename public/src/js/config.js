@@ -57,6 +57,17 @@ angular.module('insight')
   })
   .run(function($rootScope, $route, $location, $routeParams, $anchorScroll, ngProgress, gettextCatalog, amMoment) {
     gettextCatalog.currentLanguage = defaultLanguage;
+
+    //Defalut interface for each network currency
+    $rootScope.headerBackgroundColor = defaultHeaderBackgroundColor;
+    $rootScope.coinName = defaultCoinName;
+    $rootScope.formBackgroundColor = defaultFormBackgroundColor;
+    $rootScope.statusBackgroundColor = defaultStatusBackgroundColor;
+    $rootScope.defaultUSD = defaultUSD;
+    $rootScope.defaultCoinUnit = defaultCoinUnit;
+    $rootScope.defaultMicroCoinUnit = defaultMicroCoinUnit;
+    $rootScope.defaultBits = defaultBits;
+
     amMoment.changeLocale(defaultLanguage);
     $rootScope.$on('$routeChangeStart', function() {
       ngProgress.start();
@@ -64,7 +75,6 @@ angular.module('insight')
 
     $rootScope.$on('$routeChangeSuccess', function() {
       ngProgress.complete();
-
       //Change page title, based on Route information
       $rootScope.titleDetail = '';
       $rootScope.title = $route.current.title;

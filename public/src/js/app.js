@@ -2,6 +2,14 @@
 
 var defaultLanguage = localStorage.getItem('insight-language') || 'en';
 var defaultCurrency = localStorage.getItem('insight-currency') || 'USD';
+var defaultCoinName = 'flashcoin';
+var defaultHeaderBackgroundColor = '#9EDD72';
+var defaultFormBackgroundColor = '#333';
+var defaultStatusBackgroundColor = '#333';
+var defaultUSD = 'USD';
+var defaultCoinUnit = 'SCC';
+var defaultMicroCoinUnit = 'mSCC';
+var defaultBits = 'bits';
 
 angular.module('insight',[
   'ngAnimate',
