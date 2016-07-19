@@ -18,7 +18,15 @@ angular.module('insight.currency').controller('CurrencyController',
 
         var response;
 
-        if (this.symbol === 'USD') {
+        if (this.symbol === $rootScope.defaultUSD) {
+          response = _roundFloat((value * this.factor), 2);
+        } else if (this.symbol === $rootScope.defaultMicroCoinUnit) {
+          this.factor = 1000;
+          response = _roundFloat((value * this.factor), 5);
+        } else if (this.symbol === $rootScope.defaultBits) {
+          this.factor = 1000000;
+          response = _roundFloat((value * this.factor), 2);
+        } else {
           this.factor = 1;
           response = value;
         }
@@ -35,7 +43,15 @@ angular.module('insight.currency').controller('CurrencyController',
       $rootScope.currency.symbol = currency;
       localStorage.setItem('insight-currency', currency);
 
-      if (currency === 'USD') {
+      if (currency === $rootScope.defaultUSD) {
+        Currency.get({}, function(res) {
+          $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
+        });
+      } else if (currency === $rootScope.defaultMicroCoinUnit) {
+        $rootScope.currency.factor = 1000;
+      } else if (currency === $rootScope.defaultBits) {
+        $rootScope.currency.factor = 1000000;
+      } else {
         $rootScope.currency.factor = 1;
       }
     };
