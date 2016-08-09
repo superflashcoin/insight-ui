@@ -28,7 +28,7 @@ angular.module('insight.currency').controller('CurrencyController',
           response = _roundFloat((value * this.factor), 2);
         } else {
           this.factor = 10; // 10x for flashcoin.io
-          response = value;
+          response = _roundFloat((value * this.factor), 2);
         }
         // prevent sci notation
         if (response < 1e-7) response=response.toFixed(8);
