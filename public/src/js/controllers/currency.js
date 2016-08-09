@@ -21,13 +21,13 @@ angular.module('insight.currency').controller('CurrencyController',
         if (this.symbol === $rootScope.defaultUSD) {
           response = _roundFloat((value * this.factor), 2);
         } else if (this.symbol === $rootScope.defaultMicroCoinUnit) {
-          this.factor = 1000;
+          this.factor = 10000; // 10x for flashcoin.io
           response = _roundFloat((value * this.factor), 5);
         } else if (this.symbol === $rootScope.defaultBits) {
-          this.factor = 1000000;
+          this.factor = 10000000; // 10x for flashcoin.io
           response = _roundFloat((value * this.factor), 2);
         } else {
-          this.factor = 1;
+          this.factor = 10; // 10x for flashcoin.io
           response = value;
         }
         // prevent sci notation
@@ -48,11 +48,11 @@ angular.module('insight.currency').controller('CurrencyController',
           $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
         });
       } else if (currency === $rootScope.defaultMicroCoinUnit) {
-        $rootScope.currency.factor = 1000;
+        $rootScope.currency.factor = 10000; // 10x for flashcoin.io
       } else if (currency === $rootScope.defaultBits) {
-        $rootScope.currency.factor = 1000000;
+        $rootScope.currency.factor = 10000000; // 10x for flashcoin.io
       } else {
-        $rootScope.currency.factor = 1;
+        $rootScope.currency.factor = 10; // 10x for flashcoin.io
       }
     };
 
