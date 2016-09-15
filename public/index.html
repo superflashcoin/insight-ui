@@ -45,7 +45,16 @@
 	</div>
 	<div id="footer" role="navigation">
     <div class="container" data-ng-controller="FooterController">
-      <div class="links m20t pull-left">
+      <div class="footer-link">
+        <ul class="">
+            <li><a href="terms-of-service.html" target="_blank">Terms of Service</a></li>
+            <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+            <li><a href="support.html" target="_blank">Support</a></li>
+            <li><a href="contact.html" target="_blank">Contact</a></li>
+        </ul>
+        <p><img src="img/flag-footer.png" width="" style="margin-right:10px;" />Copyright (c) 2016 Flashnet Tech, Inc. Montreal, Canada.  All Rights Reserved.  Flash is a trademark of Flashnet Tech, Inc.</p>
+      </div>
+      <div class="links">
         <span class="languages" ng-show="availableLanguages.0">
           [
           <a href="#"
@@ -63,7 +72,6 @@
         <a href="tx/send" translate>broadcast transaction</a>
         ]
       </div>
-      <a class="insight m10v pull-right" target="_blank" href="http://insight.is">insight <small>API v{{version}}</small></a>
     </div>
   </div>
   <script language="javascript">window.apiPrefix = '/api';</script>
