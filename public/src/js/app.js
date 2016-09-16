@@ -7,8 +7,8 @@ var defaultHeaderBackgroundColor = '#9EDD72';
 var defaultFormBackgroundColor = '#333';
 var defaultStatusBackgroundColor = '#333';
 var defaultUSD = 'USD';
-var defaultCoinUnit = 'SCC';
-var defaultMicroCoinUnit = 'mSCC';
+var defaultCoinUnit = 'FLC';
+var defaultMicroCoinUnit = 'mFLC';
 var defaultBits = 'bits';
 
 angular.module('insight',[
