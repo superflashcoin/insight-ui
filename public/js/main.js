@@ -1,6 +1,14 @@
 // Source: public/src/js/app.js
 var defaultLanguage = localStorage.getItem('insight-language') || 'en';
 var defaultCurrency = localStorage.getItem('insight-currency') || 'USD';
+var defaultCoinName = 'flashcoin';
+var defaultHeaderBackgroundColor = '#9EDD72';
+var defaultFormBackgroundColor = '#333';
+var defaultStatusBackgroundColor = '#333';
+var defaultUSD = 'USD';
+var defaultCoinUnit = 'SCC';
+var defaultMicroCoinUnit = 'mSCC';
+var defaultBits = 'bits';
 
 angular.module('insight',[
   'ngAnimate',
@@ -257,9 +265,17 @@ angular.module('insight.currency').controller('CurrencyController',
 
         var response;
 
-        if (this.symbol === 'USD') {
-          this.factor = 1;
-          response = value;
+        if (this.symbol === $rootScope.defaultUSD) {
+          response = _roundFloat((value * this.factor), 2);
+        } else if (this.symbol === $rootScope.defaultMicroCoinUnit) {
+          this.factor = 10000; // 10x for flashcoin.io
+          response = _roundFloat((value * this.factor), 5);
+        } else if (this.symbol === $rootScope.defaultBits) {
+          this.factor = 10000000; // 10x for flashcoin.io
+          response = _roundFloat((value * this.factor), 2);
+        } else {
+          this.factor = 10; // 10x for flashcoin.io
+          response = _roundFloat((value * this.factor), 2);
         }
         // prevent sci notation
         if (response < 1e-7) response=response.toFixed(8);
@@ -274,8 +290,16 @@ angular.module('insight.currency').controller('CurrencyController',
       $rootScope.currency.symbol = currency;
       localStorage.setItem('insight-currency', currency);
 
-      if (currency === 'USD') {
-        $rootScope.currency.factor = 1;
+      if (currency === $rootScope.defaultUSD) {
+        Currency.get({}, function(res) {
+          $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
+        });
+      } else if (currency === $rootScope.defaultMicroCoinUnit) {
+        $rootScope.currency.factor = 10000; // 10x for flashcoin.io
+      } else if (currency === $rootScope.defaultBits) {
+        $rootScope.currency.factor = 10000000; // 10x for flashcoin.io
+      } else {
+        $rootScope.currency.factor = 10; // 10x for flashcoin.io
       }
     };
 
@@ -332,12 +356,16 @@ angular.module('insight.system').controller('HeaderController',
     $scope.global = Global;
 
     $rootScope.currency = {
-      factor: 1,
+      factor: 10,
       bitstamp: 0,
-      symbol: 'USD'
+      symbol: 'FLC'
     };
 
-    $scope.menu = [{
+    $scope.menu = [
+    {
+        'title': 'Charts',
+        'link': 'https://charts.flashcoin.io/'
+    }, {
       'title': 'Blocks',
       'link': 'blocks'
     }, {
@@ -1320,6 +1348,17 @@ angular.module('insight')
   })
   .run(function($rootScope, $route, $location, $routeParams, $anchorScroll, ngProgress, gettextCatalog, amMoment) {
     gettextCatalog.currentLanguage = defaultLanguage;
+
+    //Defalut interface for each network currency
+    $rootScope.headerBackgroundColor = defaultHeaderBackgroundColor;
+    $rootScope.coinName = defaultCoinName;
+    $rootScope.formBackgroundColor = defaultFormBackgroundColor;
+    $rootScope.statusBackgroundColor = defaultStatusBackgroundColor;
+    $rootScope.defaultUSD = defaultUSD;
+    $rootScope.defaultCoinUnit = defaultCoinUnit;
+    $rootScope.defaultMicroCoinUnit = defaultMicroCoinUnit;
+    $rootScope.defaultBits = defaultBits;
+
     amMoment.changeLocale(defaultLanguage);
     $rootScope.$on('$routeChangeStart', function() {
       ngProgress.start();
@@ -1327,7 +1366,6 @@ angular.module('insight')
 
     $rootScope.$on('$routeChangeSuccess', function() {
       ngProgress.complete();
-
       //Change page title, based on Route information
       $rootScope.titleDetail = '';
       $rootScope.title = $route.current.title;
