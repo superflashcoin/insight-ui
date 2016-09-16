@@ -5,12 +5,16 @@ angular.module('insight.system').controller('HeaderController',
     $scope.global = Global;
 
     $rootScope.currency = {
-      factor: 1,
+      factor: 10,
       bitstamp: 0,
-      symbol: 'USD'
+      symbol: 'FLC'
     };
 
-    $scope.menu = [{
+    $scope.menu = [
+    {
+        'title': 'Charts',
+        'link': 'https://charts.flashcoin.io/'
+    }, {
       'title': 'Blocks',
       'link': 'blocks'
     }, {
