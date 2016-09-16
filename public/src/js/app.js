@@ -1,7 +1,7 @@
 'use strict';
 
 var defaultLanguage = localStorage.getItem('insight-language') || 'en';
-var defaultCurrency = localStorage.getItem('insight-currency') || 'USD';
+var defaultCurrency = localStorage.getItem('insight-currency') || 'FLC';
 var defaultCoinName = 'flashcoin';
 var defaultHeaderBackgroundColor = '#9EDD72';
 var defaultFormBackgroundColor = '#333';
